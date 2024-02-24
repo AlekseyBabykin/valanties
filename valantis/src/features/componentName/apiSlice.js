@@ -8,7 +8,7 @@ export const fetchIds = createAsyncThunk("api/fetchIds", async () => {
   const authString = md5(`${password}_${timestamp}`);
 
   const response = await axios.post(
-    "http://api.valantis.store:40000/",
+    "https://api.valantis.store:41000/",
     {
       action: "get_ids",
       // params: { offset: 0, limit: 200 },
@@ -29,7 +29,7 @@ export const fetchItems = createAsyncThunk("api/fetchItems", async (ids) => {
   const authString = md5(`${password}_${timestamp}`);
 
   const response = await axios.post(
-    "http://api.valantis.store:40000/",
+    "https://api.valantis.store:41000/",
     {
       action: "get_items",
       params: { ids },
@@ -56,7 +56,7 @@ export const filterItems = createAsyncThunk(
     const authString = md5(`${password}_${timestamp}`);
 
     const response = await axios.post(
-      "http://api.valantis.store:40000/",
+      "https://api.valantis.store:41000/",
       {
         action: "filter",
         params: { product, price, brand },
